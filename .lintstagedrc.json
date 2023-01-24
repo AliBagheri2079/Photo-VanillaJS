@@ -1,5 +1,4 @@
 {
   "./**/*.js": "npm run lint:scripts",
-  "./**/*.{js,html,json}": "npm run format:scripts",
-  "./**/*.{css,scss}": "npm run format:styles"
+  "./**/*.{css,scss}": "npm run lint:styles"
 }
