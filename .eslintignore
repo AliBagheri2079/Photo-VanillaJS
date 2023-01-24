@@ -3,5 +3,14 @@
 !.build
 .build/*
 !.build/test.js
-# Ignore all vendor js files
+
+# other folder and file
 **/vendor/*.js
+.history
+.husky
+.vscode
+coverage
+dist
+node_modules
+vite.config.ts
+jest.config.ts
