@@ -1,0 +1,15 @@
+/* CSS Debug Style */
+* {
+  box-sizing: border-box;
+
+  /* 
+    * There is 2 way 
+    ? background: red !important;
+    ?  outline: 1px solid red !important;
+  */
+}
+
+/*
+! Ignore Modern CSS Reset Style for Normalize file
+? @forward "reset";
+*/
