@@ -9,6 +9,9 @@
     "alpha-value-notation": null,
     "property-no-vendor-prefix": null,
     "value-keyword-case": null,
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": null,
+    "custom-property-pattern": null,
+    "selector-class-pattern": null
   }
 }
