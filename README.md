@@ -11,7 +11,7 @@
 7. use `gsap` and `lenis` for scroll animation
 8. absolute path import
 9. package installer: `npm`
-10. for bundle project use: `vite`, `parcel` and `moonrepo`
+10. for boundle project use: `vite` and `parcel`
 
 ## Project Plans
 
