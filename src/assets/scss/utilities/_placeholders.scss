@@ -1,1 +1,39 @@
-// sass file
+@use "mixins" as mix;
+@use "variables" as *;
+@import "/node_modules/bootstrap/scss/mixins";
+
+%custom-gray-filter {
+  filter: $sepia $brightness $contrast $grayscale $opacity $saturate;
+}
+
+%custom-gray-blur-filter {
+  filter: $sepia $brightness $contrast $grayscale $opacity $saturate $blur;
+}
+
+%custom-transition {
+  @include mix.transition(
+    all,
+    var(--timing-3, 300ms),
+    cubic-bezier(0.76, 0, 0.24, 1),
+    false
+  );
+}
+
+%full-height {
+  @include rfs(100%, height);
+}
+
+%full-width {
+  @include rfs(100%, width);
+}
+
+%flex-center {
+  @include rfs(flex, display);
+  @include rfs(center, align-items);
+  @include rfs(center, justify-content);
+}
+
+%hide-with-position {
+  @include rfs(absolute, position);
+  @include rfs(-1, z-index);
+}

@@ -1,1 +1,10 @@
-// sass file
+/* 
+* Create Custom Transition
+*/
+@mixin transition($property, $duration, $function, $delay: false) {
+  transition: $property $duration $function;
+
+  @if $delay {
+    transition-delay: $delay;
+  }
+}

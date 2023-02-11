@@ -1,1 +1,32 @@
-// sass file
+/* Create Timing Variables */
+:root {
+  @for $i from 1 through 100 {
+    --timing-#{$i}: calc(#{$i} * 100 * 1ms);
+  }
+}
+
+/* List of Filter Props Variables */
+$filter: (
+  "property": (
+    "opacity": opacity,
+    "brightness": brightness,
+    "blur": blur,
+    "saturate": saturate,
+    "contrast": contrast,
+    "grayscale": grayscale,
+    "invert": invert,
+    "sepia": sepia,
+    "drop-shadow": drop-shadow,
+    "hue-rotate": hue-rotate,
+    "url": url,
+  ),
+);
+
+/* Created from 'https://codepen.io/stoumann/pen/MWeNmyb' codepen demo */
+$sepia: sepia(0.13);
+$brightness: brightness(1.1);
+$contrast: contrast(0.9);
+$grayscale: grayscale(0.5);
+$opacity: opacity(0.9);
+$saturate: saturate(0.4);
+$blur: blur(3px);
