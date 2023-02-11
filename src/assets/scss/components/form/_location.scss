@@ -1,0 +1,7 @@
+@use "../../utilities/placeholders";
+
+.location {
+  &__map {
+    @extend %custom-gray-filter;
+  }
+}

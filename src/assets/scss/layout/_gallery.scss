@@ -1,0 +1,119 @@
+@use "../utilities/placeholders";
+
+.gallery {
+  --effect-strength: 0.3;
+  --gradiant-block-size: 22dvb;
+
+  & {
+    background-color: var(--bs-gray-500);
+    inset: 0;
+  }
+
+  &--wrapper {
+    @extend %full-width, %full-height;
+    isolation: isolate;
+    padding: 1em;
+  }
+
+  &__gradiant {
+    & {
+      @extend %full-width;
+      height: var(--gradiant-block-size);
+
+      -webkit-clip-path: polygon(0 0, 100% 0%, 100% 30%, 0% 100%);
+      clip-path: polygon(0 0, 100% 0%, 100% 30%, 0% 100%);
+    }
+
+    &--place {
+      @extend %hide-with-position;
+      inset: 0;
+    }
+
+    #gradiant-canv {
+      @extend %full-width, %full-height;
+    }
+  }
+
+  &__titles {
+    @extend %full-width;
+    margin-inline: auto;
+  }
+
+  &__images {
+    @extend %full-width;
+    height: calc(100% - var(--gradiant-block-size));
+
+    &--place {
+      @extend %hide-with-position;
+      inset: auto auto 0 0;
+      padding: 1rem;
+      padding-inline-end: initial;
+    }
+  }
+}
+
+.titles {
+  &--wrapper {
+    width: max-content;
+    overflow: hidden;
+    margin-block: -1rem 0;
+  }
+
+  &__items {
+    & {
+      color: var(--bs-gray-700);
+      mix-blend-mode: color-burn;
+      margin: 0;
+    }
+
+    &--size {
+      font-size: clamp(8rem, 15vw, 16rem);
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    &[data-overlay] {
+      mix-blend-mode: revert;
+      color: var(--bs-gray-900);
+      opacity: calc(1 - var(--effect-strength));
+    }
+  }
+}
+
+.card {
+  & {
+    /* Modify many card bootstrap default styles */
+    --bs-card-border-width: unset;
+    --bs-card-img-overlay-padding: 2rem;
+    --bs-card-title-color: var(--bs-gray-400);
+    flex-direction: initial;
+
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &-title {
+    font-family: var(--my-font-charm);
+  }
+}
+
+.images {
+  &--pattern {
+    @extend %full-width, %full-height;
+    margin: 0 auto;
+  }
+
+  &__item {
+    @extend %custom-transition, %custom-gray-filter;
+    transform-origin: center;
+
+    .card:hover & {
+      transform: scale(0.98);
+    }
+
+    .gallery__images:hover .card:not(:hover) & {
+      @extend %custom-gray-blur-filter;
+    }
+  }
+}
