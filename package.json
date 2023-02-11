@@ -3,10 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "source": "index.html",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "start": "parcel",
+    "watch": "parcel watch",
+    "build": "parcel build",
     "lint:scripts": "eslint . --fix",
     "lint:styles": "stylelint ./**/*.{css,scss}",
     "format:scripts": "prettier . --write",
@@ -30,11 +31,11 @@
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
+    "parcel": "^2.8.3",
     "prettier": "^2.8.3",
     "sass": "^1.57.1",
     "stylelint": "^14.16.1",
     "stylelint-config-prettier-scss": "^0.0.1",
-    "stylelint-config-standard-scss": "^6.1.0",
-    "vite": "^4.0.0"
+    "stylelint-config-standard-scss": "^6.1.0"
   }
 }
