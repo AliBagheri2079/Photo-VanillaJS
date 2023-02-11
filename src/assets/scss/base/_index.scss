@@ -13,3 +13,19 @@
     ? outline: 1px solid red !important;
   */
 }
+
+/* Lenis(Smooth Scrool Plugin) Default Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100%;
+  height: auto;
+}
+
+/* Reset Document Scrollbar style */
+body {
+  overflow: hidden;
+}
