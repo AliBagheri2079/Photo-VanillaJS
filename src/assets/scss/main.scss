@@ -10,9 +10,16 @@
   utilities;
 */
 
-/* Basic Style, Debug Style */
+/* Basic Style, Debug Style and Global Variable */
 @use "base";
+@use "utilities/variables";
 
 /* Vendors Style: Normalize & Bootstrap */
 @use "vendors/normalize";
 @use "vendors/bootstrap";
+
+/* Header, Navbar and other Layout Styles */
+@use "layout";
+
+/* Components Styles */
+@use "components";

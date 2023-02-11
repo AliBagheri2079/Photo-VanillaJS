@@ -1,2 +1,25 @@
 /* Import all of Bootstrap's CSS */
-@import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/Bootstrap";
+
+/* Bootstrap Icons Style */
+@import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+/* Create and Modify many Styles with Bootstrap Variables */
+:root,
+[data-bs-theme="light"] {
+  color: var(--bs-gray-900);
+  background-color: var(--bs-gray-100);
+
+  /* 
+  * Create Custom Font Family
+  * Change Bootstrap Default Font Family 
+  */
+  --my-font-charm: "Charm", cursive;
+  --my-font-gilda-display: "Gilda Display", serif;
+  --bs-body-font-family: var(--my-font-gilda-display);
+}
+
+::selection {
+  color: var(--bs-gray-800);
+  background-color: var(--bs-gray-500);
+}
