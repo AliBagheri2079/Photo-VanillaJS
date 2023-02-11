@@ -34,7 +34,96 @@
       </div>
     </div>
 
-    <div id="app"></div>
+    <div id="app">
+      <header
+        class="header header--back-images position-relative vw-100 vh-100"
+      >
+        <div class="header__filter position-absolute"></div>
+
+        <nav class="navbar navbar--customize position-absolute">
+          <div
+            class="container-fluid d-flex align-items-center justify-content-end"
+          >
+            <button
+              type="button"
+              id="navTogglerIcon"
+              class="navbar-toggler navbar-toggler--place navbar-toggler--revealer translate-middle-x"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasScrolling"
+              aria-controls="offcanvasScrolling"
+              aria-expanded="false"
+              data-open="false"
+            >
+              <svg
+                class="navbar-toggler__hamburger"
+                viewBox="-10 -10 120 120"
+                width="100"
+              >
+                <path
+                  class="navbar-toggler__hamburger__line"
+                  stroke-width="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70"
+                ></path>
+              </svg>
+              <span class="visually-hidden-focusable">Toggle Menu</span>
+            </button>
+
+            <div
+              class="offcanvas offcanvas--customize"
+              data-bs-scroll="true"
+              data-bs-backdrop="false"
+              tabindex="-1"
+              id="offcanvasScrolling"
+              aria-labelledby="offcanvasScrollingLabel"
+            >
+              <div class="offcanvas-header">
+                <h5
+                  class="offcanvas-title visually-hidden-focusable"
+                  id="offcanvasScrollingLabel"
+                >
+                  Nav Items
+                </h5>
+              </div>
+
+              <div class="offcanvas-body">
+                <ul
+                  id="itemsWrapper"
+                  class="navbar-nav h-100 w-100 justify-content-evenly"
+                >
+                  <!--* Add Nav Items from js file -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <section
+          class="header__titles header__titles--size position-absolute start-50 translate-middle"
+        >
+          <div
+            class="titles-container w-100 h-100 d-flex flex-column align-items-center justify-content-evenly bg-black bg-gradient bg-opacity-25 rounded"
+          >
+            <h1
+              class="text-capitalize text-center mx-5 my-2"
+              style="color: var(--bs-body-bg)"
+            >
+              created weblog with
+              <strong style="color: var(--bs-gray-100)">gsap</strong>
+            </h1>
+
+            <a
+              class="btn btn-outline-dark text-lowercase rounded-pill my-3"
+              href="/second.html"
+              role="button"
+            >
+              second page
+            </a>
+          </div>
+        </section>
+      </header>
+    </div>
 
     <script type="module" src="/src/main.js"></script>
   </body>

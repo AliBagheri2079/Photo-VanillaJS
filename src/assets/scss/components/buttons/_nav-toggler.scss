@@ -1,0 +1,73 @@
+.navbar-toggler {
+  /* Disable and Edite Bootstrap Default Style */
+  & {
+    padding: initial;
+    font-size: initial;
+    border: initial;
+    transition: initial;
+  }
+
+  &:focus {
+    outline: unset;
+    box-shadow: unset;
+  }
+
+  /* Create Local Variables */
+  --bs-zindex-offcanvas: 1045;
+  --navbar-toggler--zindex: calc(var(--bs-zindex-offcanvas) + 1);
+  --navbar-toggler-icon--stroke-dasharray: 60 31 60 300;
+
+  /* Add Position Style with 'rfs' bootstrap mixin */
+  &--place {
+    z-index: var(--navbar-toggler--zindex);
+    overflow: hidden;
+  }
+
+  /* Add Circular Revealer Style */
+  &--revealer {
+    animation-duration: var(--timing-1);
+    animation-timing-function: ease;
+
+    &[data-open="true"] {
+      animation-name: full-scale;
+    }
+
+    &:not([data-open="true"]) {
+      transition: background-color var(--timing-2) linear;
+    }
+  }
+
+  &__hamburger {
+    fill: none;
+    width: inherit;
+    stroke: var(--bs-gray-700);
+    transition: translate var(--timing-10), rotate var(--timing-10);
+
+    &__line {
+      transition: var(--timing-10);
+      stroke-dasharray: var(--navbar-toggler-icon--stroke-dasharray);
+    }
+  }
+
+  &:not([aria-expanded="false"]) {
+    .navbar-toggler__hamburger {
+      translate: 10px -10px;
+      rotate: 0.125turn;
+
+      &__line {
+        --navbar-toggler-icon--stroke-dasharray: 60 105 60 300;
+        stroke-dashoffset: -90;
+      }
+    }
+  }
+}
+
+@keyframes full-scale {
+  from {
+    scale: 0;
+  }
+
+  to {
+    scale: 100%;
+  }
+}

@@ -1,0 +1,38 @@
+@use "../utilities/placeholders";
+
+.header {
+  &--back-images {
+    background-image: url("/src/assets/images/rock.png"),
+      url("/src/assets/images/girl.png"), url("/src/assets/images/mount.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 90%, 100% 100%, cover;
+  }
+
+  &__filter {
+    inset: 0;
+    background: var(--bs-gray-500);
+    @extend %custom-gray-filter;
+    mix-blend-mode: saturation;
+  }
+
+  &__titles {
+    & {
+      inset-block-start: 40%;
+    }
+
+    &--size {
+      width: clamp(300px, 50vw, 450px);
+      height: max(100vh - 45rem, 200px);
+    }
+
+    > .titles-container {
+      // clip-path: polygon(0 0, 90% 0%, 100% 20%, 100% 100%, 0 100%);
+
+      :not(.btn) {
+        font-family: var(--my-font-charm);
+        font-size: calc(2rem + 1vw);
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@use "../utilities/placeholders";
+
+.navbar {
+  /* Create Local Variables */
+  --nav-item--primary-color: var(--bs-gray-100);
+  --nav-item--hover-color: var(--bs-secondary);
+  --nav-item--font-size: calc(5rem + 2vw);
+
+  &--customize {
+    @extend %full-width;
+    height: 15%;
+
+    > .container-fluid {
+      @extend %full-height;
+    }
+  }
+}
+
+.nav-item {
+  font-size: var(--nav-item--font-size);
+  line-height: var(--nav-item--font-size);
+
+  &,
+  &__wrapper {
+    &:hover,
+    &:focus-visible {
+      outline: none;
+
+      .nav-link {
+        color: var(--nav-item--hover-color);
+      }
+
+      .nav-icons__item {
+        &:first-of-type {
+          transform: translateY(0);
+          visibility: visible;
+          opacity: 1;
+        }
+
+        &:last-of-type {
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+.nav-link {
+  color: unset;
+  @extend %custom-transition;
+
+  &:focus {
+    outline: unset;
+  }
+}
+
+.nav-icons {
+  position: relative;
+  width: 100px;
+  height: 100px;
+
+  &__item {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    @extend %custom-transition;
+
+    &:first-of-type {
+      color: var(--nav-item--hover-color);
+      transform: translateY(-50%);
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}
